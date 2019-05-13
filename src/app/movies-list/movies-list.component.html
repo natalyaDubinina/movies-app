@@ -1,0 +1,24 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]='searchMovie' (keyup.enter)="searchMovies()" matInput placeholder="Search film"
+      name="searchMovie">
+  </mat-form-field>
+</form>
+
+<mat-form-field>
+  <mat-label>Genre</mat-label>
+  <mat-select [(ngModel)]="genre" name="genre">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let genre of genres" [value]="genre">{{genre}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+  <mat-card class="card-picture" [routerLink]="['/movie', movie.id]" routerLinkActive="active"
+    *ngFor="let movie of movies | movieSearch:searchMovie | movieGenre:genre">
+    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+      <span class="card-name" fxFlex="80%">{{movie.name}}</span>
+    </mat-card-title>
+    <img mat-card-image [src]="movie['img']">
+  </mat-card>
+</div>

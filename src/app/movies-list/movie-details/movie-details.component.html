@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+  <mat-card-header class="card-header">
+    <mat-card-title>{{movie['name']}}</mat-card-title>
+    <mat-card-subtitle>{{movie['genres']}}</mat-card-subtitle>
+    <mat-card-subtitle>{{movie['rate']}}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="card-image" mat-card-image height="375" [src]="movie['img']" alt="Movie image">
+  <div class="card-bottom">
+  <mat-card-content>
+    <p>
+      {{movie['description']}}
+    </p>
+    <p>
+      {{movie['length']}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="warn" (click)='goBack()'>Go back</button>
+  </mat-card-actions>
+</div>
+</mat-card>

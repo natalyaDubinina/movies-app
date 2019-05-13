@@ -1,0 +1,18 @@
+.example-card {
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .card-header{
+    text-align: left;
+  }
+
+  .card-image{
+    width: auto;
+    max-width: calc(100% + 32px);
+    margin: 0 auto;
+  } 
+  
+  .card-bottom{
+    text-align: left;
+  }
